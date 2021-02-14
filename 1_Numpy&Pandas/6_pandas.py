@@ -47,7 +47,7 @@ print('######################################################################')
 # DataFrame 의 컬럽 데이터 셋 Access
 
 titanic_df = pd.read_csv(
-    'Data/Titanic/titanic_train.csv',
+    '../Data/Titanic/titanic_train.csv',
 )
 titanic_df['Age_0'] = 0
 print(titanic_df.head(3))

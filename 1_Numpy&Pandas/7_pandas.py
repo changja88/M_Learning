@@ -2,7 +2,7 @@ import pandas as pd
 
 
 titanic_df = pd.read_csv(
-    'Data/Titanic/titanic_train.csv',
+    '../Data/Titanic/titanic_train.csv',
 )
 
 # 데이터 셀렉션 및 필터링

@@ -7,7 +7,7 @@ pd.set_option('display.max_columns', 10)
 # DatFrame -> 2차원 데이터 셋
 
 titanic_df = pd.read_csv(
-    'Data/Titanic/titanic_train.csv',
+    '../Data/Titanic/titanic_train.csv',
 )
 
 head = titanic_df.head(5)  # 기본이 5개
