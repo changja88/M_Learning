@@ -19,8 +19,7 @@ print(array3)
 # reshpae -1 -> 가변적이라는 뜻
 # (-1, 1), (-1,) 형태로 자주 사용
 # -1 은 반듯이 한개만 넣어줘야 한다 
-array2 = array1.reshape(-1,1)
+array2 = array1.reshape(-1, 1)
 print(array2)
 array3 = array2.reshape(-1)
 print(array3)
-
