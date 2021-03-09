@@ -46,6 +46,120 @@ y_titanic_df = titanic_df['Survived']
 X_titanic_df = titanic_df.drop('Survived', axis=1)
 
 X_titanic_df = transform_features(X_titanic_df)
+def fillna(df):
+    df['Age'].fillna(df['Age'].mean(), inplace=True)
+    df['Cabin'].fillna('N', inplace=True)
+    df['Embarked'].fillna('N', inplace=True)
+    df['Fare'].fillna(0, inplace=True)
+    return df
+
+
+# 머신러닝 알고리즘에 불필요한 속성 제거
+def drop_features(df):
+    df.drop(['PassengerId', 'Name', 'Ticket'], axis=1, inplace=True)
+    return df
+
+
+# 레이블 인코딩 수행.
+def format_features(df):
+    df['Cabin'] = df['Cabin'].str[:1]
+    features = ['Cabin', 'Sex', 'Embarked']
+    for feature in features:
+        le = LabelEncoder()
+        le = le.fit(df[feature])
+        df[feature] = le.transform(df[feature])
+    return df
+
+
+# 앞에서 설정한 Data Preprocessing 함수 호출
+def transform_features(df):
+    df = fillna(df)
+    df = drop_features(df)
+    df = format_features(df)
+    return df
+
+
+titanic_df = pd.read_csv('../Data/Titanic/titanic_train.csv')
+y_titanic_df = titanic_df['Survived']
+X_titanic_df = titanic_df.drop('Survived', axis=1)
+
+X_titanic_df = transform_features(X_titanic_df)
+def fillna(df):
+    df['Age'].fillna(df['Age'].mean(), inplace=True)
+    df['Cabin'].fillna('N', inplace=True)
+    df['Embarked'].fillna('N', inplace=True)
+    df['Fare'].fillna(0, inplace=True)
+    return df
+
+
+# 머신러닝 알고리즘에 불필요한 속성 제거
+def drop_features(df):
+    df.drop(['PassengerId', 'Name', 'Ticket'], axis=1, inplace=True)
+    return df
+
+
+# 레이블 인코딩 수행.
+def format_features(df):
+    df['Cabin'] = df['Cabin'].str[:1]
+    features = ['Cabin', 'Sex', 'Embarked']
+    for feature in features:
+        le = LabelEncoder()
+        le = le.fit(df[feature])
+        df[feature] = le.transform(df[feature])
+    return df
+
+
+# 앞에서 설정한 Data Preprocessing 함수 호출
+def transform_features(df):
+    df = fillna(df)
+    df = drop_features(df)
+    df = format_features(df)
+    return df
+
+
+titanic_df = pd.read_csv('../Data/Titanic/titanic_train.csv')
+y_titanic_df = titanic_df['Survived']
+X_titanic_df = titanic_df.drop('Survived', axis=1)
+
+X_titanic_df = transform_features(X_titanic_df)
+def fillna(df):
+    df['Age'].fillna(df['Age'].mean(), inplace=True)
+    df['Cabin'].fillna('N', inplace=True)
+    df['Embarked'].fillna('N', inplace=True)
+    df['Fare'].fillna(0, inplace=True)
+    return df
+
+
+# 머신러닝 알고리즘에 불필요한 속성 제거
+def drop_features(df):
+    df.drop(['PassengerId', 'Name', 'Ticket'], axis=1, inplace=True)
+    return df
+
+
+# 레이블 인코딩 수행.
+def format_features(df):
+    df['Cabin'] = df['Cabin'].str[:1]
+    features = ['Cabin', 'Sex', 'Embarked']
+    for feature in features:
+        le = LabelEncoder()
+        le = le.fit(df[feature])
+        df[feature] = le.transform(df[feature])
+    return df
+
+
+# 앞에서 설정한 Data Preprocessing 함수 호출
+def transform_features(df):
+    df = fillna(df)
+    df = drop_features(df)
+    df = format_features(df)
+    return df
+
+
+titanic_df = pd.read_csv('../Data/Titanic/titanic_train.csv')
+y_titanic_df = titanic_df['Survived']
+X_titanic_df = titanic_df.drop('Survived', axis=1)
+
+X_titanic_df = transform_features(X_titanic_df)
 X_train, X_test, y_train, y_test = train_test_split(X_titanic_df, y_titanic_df, test_size=0.2, random_state=11)
 
 # 결정트리, Random Forest, 로지스틱 회귀를 위한 사이킷런 Classifier 클래스 생성
